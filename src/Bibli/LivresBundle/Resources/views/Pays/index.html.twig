@@ -1,0 +1,43 @@
+<h1>{{ 'Pays list' | trans }}</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Pays</th>
+            <th>Nationalite</th>
+            <th>Capitale</th>
+            <th>Continent</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('pays_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.Pays }}</td>
+            <td>{{ entity.Nationalite }}</td>
+            <td>{{ entity.Capitale }}</td>
+            <td>{{ entity.Continent }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('pays_show', { 'id': entity.id }) }}">{{ 'show' | trans }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('pays_edit', { 'id': entity.id }) }}">{{ 'edit' | trans }}</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('pays_new') }}">
+            {{ 'Create a new entry' | trans }}
+        </a>
+    </li>
+</ul>

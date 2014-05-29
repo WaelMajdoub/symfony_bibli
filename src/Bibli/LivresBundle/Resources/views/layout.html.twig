@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8;" />
+    <title>{% block title %}Bibli Livres{% endblock %}</title>
+    {% stylesheets '@BibliLivresBundle/Resources/public/css/main.css' %}
+  <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+  </head>
+  <body>
+        <div id="sidebar">
+            {% block sidebar %}
+            <ul>
+                <li><a href="/symfony_bibli/web/app_dev.php">Home</a></li>
+                <li><a href="/symfony_bibli/livre/index">Liste des livres</a></li>
+                <li><a href="/symfony_bibli/auteur/index">Liste des auteurs</a></li>
+                <li><a href="/symfony_bibli/lexique/index">Mots-clés</a></li>
+                <li><a href="/symfony_bibli/blog">Blog</a></li>
+            </ul>
+            {% endblock %}
+        </div>
+
+        <div id="content">
+            {% block body %}{% endblock %}
+        </div>
+{# Bibli/LivresBundle/Resources/views/layout.html.twig #}
+{# Layout par defaut du Bundle ET NON DE L APPLICATION #}
+{# Celui de l application se trouve dans le dossier app/resources/views/base.html.twig #}
+
+  </body>
+</html>

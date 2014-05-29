@@ -1,0 +1,45 @@
+<h1>Pays</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Pays</th>
+            <td>{{ entity.Pays }}</td>
+        </tr>
+        <tr>
+            <th>Nationalite</th>
+            <td>{{ entity.Nationalite }}</td>
+        </tr>
+        <tr>
+            <th>Capitale</th>
+            <td>{{ entity.Capitale }}</td>
+        </tr>
+        <tr>
+            <th>Continent</th>
+            <td>{{ entity.Continent }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('pays') }}">
+            {{ 'Return to the list' | trans }}
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('pays_edit', { 'id': entity.id }) }}">
+            {{ 'Edit' | trans }}
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('pays_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">{{ 'Delete' | trans }}</button>
+        </form>
+    </li>
+</ul>

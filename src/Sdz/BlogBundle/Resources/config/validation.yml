@@ -1,0 +1,10 @@
+# Sdz/BlogBundle/Resources/config/validation.yml
+Acme\TaskBundle\Entity\Task:
+    properties:
+    titre:
+        - NotBlank: ~
+    auteur:
+        - NotBlank: ~    
+    date:
+        - NotBlank: ~
+        - Type: \DateTime

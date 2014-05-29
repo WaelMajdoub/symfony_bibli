@@ -1,0 +1,16 @@
+<h1>Ajout de Pays</h1>
+
+<form action="{{ path('pays_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">{{ 'Create' | trans }}</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('pays') }}">
+        {{ 'Create a new entry' | trans }}
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,89 @@
+#src/Sdz/BlogBundle/controller/!BlogConr=troller
+
+# sdz_blog_homepage:
+#    pattern:  /hello/{name}
+#    defaults: { _controller: SdzBlogBundle:Default:index } #
+
+# Ajouts tanguy : on a mis le parametre name a la route accueil pour que ça marche !!
+sdz_blog_accueil:
+    pattern:  /blog
+    defaults: { _controller: SdzBlogBundle:Blog:accueil } #
+
+sdz_blog_index:
+    pattern:  /blog/{name}
+    defaults: { _controller: SdzBlogBundle:Blog:index } #
+
+
+#FAIRE APPEL a un autre bundle !!
+#Attention article n'est pas un bundle or cette commande ne peut correspondre qu'à un BUNDLE !!
+#sdz_blog_article:
+#    resource:  "@SdzBlogBundle/Resources/config/routing/article.yml"
+#    prefix:    /sdz_blog_article
+
+
+# la route ci dessous doit etre mise AVANT la route suivante !
+#article_ajouter:
+#    pattern:  /blog/article/ajouter
+#    defaults: { _controller: SdzBlogBundle:Article:ajouter }
+
+
+
+
+article:
+    pattern:  /blog/article/
+    defaults: { _controller: "SdzBlogBundle:Article:index" }
+
+article_index:
+    pattern:  /blog/article/
+    defaults: { _controller: "SdzBlogBundle:Article:index" }
+
+article_show:
+    pattern:  /blog/article/{id}/show
+    defaults: { _controller: "SdzBlogBundle:Article:show" }
+
+# Formulaire de nouvel article
+article_new:
+    pattern:  /blog/article/new
+    defaults: { _controller: "SdzBlogBundle:Article:new" }
+
+# ajout Tanguy 
+# Formulaire de nouvel article
+article_ajouter:
+    pattern:  /blog/article/ajouter
+    defaults: { _controller: "SdzBlogBundle:Article:ajouter" }
+
+# CRUD
+article_create:
+    pattern:  /blog/article/create
+    defaults: { _controller: "SdzBlogBundle:Article:create" }
+    requirements: { _method: post }
+
+article_edit:
+    pattern:  /blog/article/{id}/edit
+    defaults: { _controller: "SdzBlogBundle:Article:edit" }
+
+article_update:
+    pattern:  /blog/article/{id}/update
+    defaults: { _controller: "SdzBlogBundle:Article:update" }
+    requirements: { _method: post }
+
+article_delete:
+    pattern:  /blog/article/{id}/delete
+    defaults: { _controller: "SdzBlogBundle:Article:delete" }
+    requirements: { _method: post }
+
+
+
+
+# ==================== Routes KO KOKO 
+# sdz_blog_voirarticle:
+#    pattern:  /blog/article/{id}
+#    defaults: { _controller: SdzBlogBundle:Blog:voirarticle } #
+
+# la route ci dessous doit etre mise AVANT la route suivante !
+# sdz_blog_creerarticle:
+#    pattern:  /blog/article/ajouter
+#    defaults: { _controller: SdzBlogBundle:Article:new }
+#    defaults: { _controller: SdzBlogBundle:Blog:ajouter } #
+
+

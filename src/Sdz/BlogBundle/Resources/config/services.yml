@@ -1,0 +1,21 @@
+# src/Sdz/BlogBundle/Resources/config/services.yml
+parameters:
+#    sdz_blog.example.class: Sdz\BlogBundle\Example
+
+services:
+#    sdz_blog.example:
+#        class: %sdz_blog.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+# SERVICE EXEMPLE :
+# Ce service permet d'utiliser le form type directement dans un contrôleur en faisant $form = $this->createForm('task', $task);
+#    acme_demo.form.type.task:
+#        class: Acme\TaskBundle\Form\Type\TaskType
+#        tags:
+#            - { name: form.type, alias: task }
+
+# pour utiliser le form articletype directement
+    sdz_blog.form.type.article:
+        class: Sdz\BlogBundle\Form\Type\ArticleType
+        tags:
+            - { name: form.type, alias: article }
